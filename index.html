@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aliquest Education at AXL Academy offers after-school tutoring, enrichment, small-group learning, CCAP support, and family-focused academic help.">
+  <title>Aliquest Education at AXL Academy | After-School Tutoring & Enrichment</title>
+  <style>
+    :root {
+      --ink: #16303a;
+      --muted: #58707a;
+      --teal: #0f7772;
+      --teal-dark: #075b58;
+      --teal-soft: #e9f6f4;
+      --gold: #f2b84b;
+      --cream: #fbfaf6;
+      --white: #ffffff;
+      --line: #dce8e7;
+      --shadow: 0 18px 45px rgba(22,48,58,.10);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; }
+    section { scroll-margin-top: 88px; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220,232,231,.9);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, var(--teal), var(--teal-dark));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 8px 24px rgba(15,119,114,.20);
+      flex: 0 0 auto;
+    }
+    .brand-copy { line-height: 1.15; }
+    .brand-copy strong { display: block; font-size: 15px; letter-spacing: .02em; }
+    .brand-copy span { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #35515b;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      padding: 11px 17px;
+      border-radius: 999px;
+      color: white !important;
+      background: var(--teal);
+    }
+    .nav-cta:hover { background: var(--teal-dark); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0 78px;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(242,184,75,.25), transparent 24%),
+        radial-gradient(circle at 5% 90%, rgba(15,119,114,.14), transparent 27%),
+        linear-gradient(180deg, #f8fcfb 0%, #ffffff 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      right: -130px;
+      bottom: -180px;
+      border: 42px solid rgba(15,119,114,.08);
+      border-radius: 50%;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--teal-dark);
+      background: var(--teal-soft);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.1; margin: 0; }
+    h1 {
+      font-size: clamp(46px, 7vw, 78px);
+      letter-spacing: -.045em;
+      max-width: 760px;
+    }
+    h1 .accent { color: var(--teal); }
+    .hero-lead {
+      max-width: 690px;
+      margin: 24px 0 0;
+      font-size: 20px;
+      color: var(--muted);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button.primary { background: var(--teal); color: white; }
+    .button.primary:hover { background: var(--teal-dark); }
+    .button.secondary { background: white; border-color: #bdd5d2; color: var(--teal-dark); }
+    .button.secondary:hover { border-color: var(--teal); background: #fbfefe; }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card h2 { font-size: 24px; margin-bottom: 8px; }
+    .hero-card > p { color: var(--muted); margin: 0 0 22px; }
+    .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .mini-card {
+      background: var(--cream);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 142px;
+    }
+    .mini-card .icon { font-size: 24px; display: block; margin-bottom: 12px; }
+    .mini-card strong { display: block; font-size: 15px; margin-bottom: 5px; }
+    .mini-card span { color: var(--muted); font-size: 13px; line-height: 1.45; display: block; }
+
+    .quickfacts { padding: 0 0 30px; margin-top: -23px; position: relative; z-index: 2; }
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--ink);
+      color: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .fact { padding: 23px 24px; border-right: 1px solid rgba(255,255,255,.12); }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .fact span { color: #cfe0e4; font-size: 13px; }
+
+    .section { padding: 88px 0; }
+    .section.soft { background: var(--cream); }
+    .section-head { max-width: 720px; margin-bottom: 42px; }
+    .kicker {
+      color: var(--teal);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: .12em;
+      font-weight: 850;
+      margin-bottom: 11px;
+    }
+    .section h2 { font-size: clamp(34px, 5vw, 50px); letter-spacing: -.035em; }
+    .section-head p { font-size: 18px; color: var(--muted); margin: 16px 0 0; }
+
+    .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .program-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: white;
+    }
+    .program-card .icon { font-size: 30px; margin-bottom: 19px; display: block; }
+    .program-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .program-card p { color: var(--muted); margin: 0; }
+
+    .quote {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 20px;
+      align-items: start;
+      background: var(--teal-soft);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .quote-mark { font-size: 64px; line-height: .8; color: var(--teal); font-family: Georgia, serif; }
+    .quote blockquote { margin: 0; font-size: 21px; line-height: 1.55; color: #24434d; }
+    .quote cite { display: block; margin-top: 14px; font-size: 14px; color: var(--muted); font-style: normal; font-weight: 700; }
+
+    .about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 56px; align-items: stretch; }
+    .about-panel {
+      background: linear-gradient(160deg, var(--teal), var(--teal-dark));
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .about-panel .initials {
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.20);
+      font-size: 31px;
+      font-weight: 850;
+      margin-bottom: 38px;
+    }
+    .about-panel h3 { font-size: 28px; }
+    .about-panel p { color: #dceceb; margin: 10px 0 0; }
+    .about-copy p { color: var(--muted); font-size: 17px; margin: 0 0 17px; }
+    .checks { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .checks li { display: flex; gap: 10px; font-weight: 750; }
+    .check-dot { color: var(--teal); font-weight: 900; }
+
+    .team-box {
+      border: 1px dashed #9cc8c4;
+      background: #fbfefe;
+      border-radius: var(--radius);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+    .team-icon {
+      width: 74px; height: 74px; border-radius: 22px;
+      background: var(--teal-soft); display: grid; place-items: center; font-size: 32px;
+    }
+    .team-box h3 { font-size: 24px; margin-bottom: 7px; }
+    .team-box p { margin: 0; color: var(--muted); }
+
+    .tuition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .price-card {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .price-card.featured { border-color: #9bc9c5; box-shadow: 0 12px 32px rgba(15,119,114,.08); }
+    .tag {
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      margin-bottom: 15px;
+    }
+    .price-card h3 { font-size: 23px; margin-bottom: 10px; }
+    .price-card p { color: var(--muted); margin: 0 0 16px; }
+    .price-card ul { padding-left: 20px; color: #36525c; margin: 4px 0 24px; }
+    .price-card li { margin: 7px 0; }
+    .price-card .button { margin-top: auto; width: 100%; }
+
+    .schools {
+      background: var(--ink);
+      color: white;
+      border-radius: 30px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 46px;
+      align-items: center;
+    }
+    .schools .kicker { color: #83d2cb; }
+    .schools h2 { color: white; }
+    .schools p { color: #d2e0e3; font-size: 17px; }
+    .school-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin-top: 24px; }
+    .school-list span { color: #edf5f6; font-weight: 700; }
+    .school-callout {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 22px;
+      padding: 28px;
+    }
+    .school-callout .icon { font-size: 42px; margin-bottom: 14px; }
+    .school-callout h3 { font-size: 24px; margin-bottom: 14px; }
+    .school-callout .button { background: white; color: var(--ink); }
+
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; align-items: stretch; }
+    .contact-card {
+      border-radius: 28px;
+      background: linear-gradient(160deg, var(--teal), var(--teal-dark));
+      color: white;
+      padding: 38px;
+    }
+    .contact-card .kicker { color: #b9e5e1; }
+    .contact-card h2 { color: white; }
+    .contact-card p { color: #dceceb; font-size: 17px; }
+    .contact-links { display: grid; gap: 12px; margin-top: 28px; }
+    .contact-link {
+      display: block;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-weight: 750;
+    }
+    .contact-link small { display: block; color: #cae3e1; font-weight: 600; margin-bottom: 2px; }
+    .contact-side { border: 1px solid var(--line); border-radius: 28px; padding: 34px; background: white; }
+    .contact-side h3 { font-size: 24px; margin-bottom: 18px; }
+    .contact-side ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; color: var(--muted); }
+    .contact-side li::before { content: "✓"; color: var(--teal); font-weight: 900; margin-right: 10px; }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--line); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; color: var(--muted); font-size: 14px; }
+    .footer-row strong { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 62px; }
+      .hero-grid, .about-grid, .schools, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; }
+      .fact-grid { grid-template-columns: 1fr 1fr; }
+      .fact:nth-child(2) { border-right: 0; }
+      .fact:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+      .program-grid, .tuition-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 24px; }
+      .schools { padding: 34px; gap: 28px; }
+    }
+
+    @media (max-width: 580px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .brand-copy span { display: none; }
+      .nav { min-height: 64px; }
+      .nav-cta { padding: 10px 13px; font-size: 13px !important; }
+      .hero { padding: 48px 0 60px; }
+      .hero-lead { font-size: 18px; }
+      .hero-card { padding: 20px; }
+      .mini-grid, .fact-grid, .checks, .school-list { grid-template-columns: 1fr; }
+      .fact { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .fact:last-child { border-bottom: 0; }
+      .section { padding: 68px 0; }
+      .quote { grid-template-columns: 1fr; }
+      .quote-mark { font-size: 48px; }
+      .team-box { grid-template-columns: 1fr; }
+      .schools, .contact-card, .contact-side { padding: 26px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Aliquest Education at AXL Academy home">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-copy">
+          <strong>ALIQUEST EDUCATION</strong>
+          <span>at AXL Academy</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#program">Program</a>
+        <a href="#about">About Ami</a>
+        <a href="#team">Tutors</a>
+        <a href="#tuition">Tuition</a>
+        <a class="nav-cta" href="#contact">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Learning support that feels different</div>
+          <h1>Learn. <span class="accent">Grow.</span> Thrive.</h1>
+          <p class="hero-lead">Aliquest Education at AXL Academy gives students a welcoming place to learn, practice, ask questions and build confidence after the school day ends.</p>
+          <div class="actions">
+            <a class="button primary" href="#contact">Explore Enrollment →</a>
+            <a class="button secondary" href="#program">See Our Program</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Inside the program">
+          <h2>Inside the program</h2>
+          <p>Family-focused support designed around real student needs.</p>
+          <div class="mini-grid">
+            <div class="mini-card"><span class="icon">📚</span><strong>Academic Support</strong><span>Reading, writing, math, homework and skill practice.</span></div>
+            <div class="mini-card"><span class="icon">🌱</span><strong>Confidence Building</strong><span>Encouragement and meaningful opportunities for success.</span></div>
+            <div class="mini-card"><span class="icon">🧩</span><strong>Flexible Learning</strong><span>Activities adapted to student needs and learning styles.</span></div>
+            <div class="mini-card"><span class="icon">💛</span><strong>A Welcoming Space</strong><span>A positive transition from the school day to after-school learning.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="quickfacts">
+      <div class="wrap fact-grid">
+        <div class="fact"><strong>Small Groups</strong><span>More individual attention</span></div>
+        <div class="fact"><strong>CCAP Accepted</strong><span>Ask about eligibility</span></div>
+        <div class="fact"><strong>Sliding Scale</strong><span>Options may be available</span></div>
+        <div class="fact"><strong>Flexible Support</strong><span>Built around student needs</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="program">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">What We Do</div>
+          <h2>More than homework help.</h2>
+          <p>We combine academic practice with encouragement, connection and activities that help students feel capable.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card"><span class="icon">📖</span><h3>Reading &amp; Writing</h3><p>Phonics, reading practice, comprehension, vocabulary, writing and age-appropriate literacy activities.</p></article>
+          <article class="program-card"><span class="icon">➗</span><h3>Math &amp; Problem Solving</h3><p>Practice, games and guided support that help students strengthen foundational math skills.</p></article>
+          <article class="program-card"><span class="icon">⭐</span><h3>Enrichment &amp; Growth</h3><p>Brain breaks, games, creative activities and confidence-building experiences round out the afternoon.</p></article>
+        </div>
+        <div class="quote">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <div>
+            <blockquote>Every student comes to us with different strengths and different needs. Our goal isn't to make every child learn the same way. It's to find the approaches and activities that help each student make progress.</blockquote>
+            <cite>Ami Hull · Regional Supervisor | Partnerships &amp; School Growth</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="about">
+      <div class="wrap about-grid">
+        <aside class="about-panel">
+          <div>
+            <div class="initials">AH</div>
+            <div class="kicker" style="color:#b9e5e1">A Note From Ami</div>
+            <h3>A place where kids can feel successful.</h3>
+          </div>
+          <p>Aliquest Education at AXL Academy</p>
+        </aside>
+        <div class="about-copy">
+          <p>Hi families! I'm Ami, and I'm excited to help lead Aliquest's program at AXL Academy. After years working with children and families, I've seen how much of a difference it makes when a child has someone who believes in them, meets them where they are and makes learning feel manageable.</p>
+          <p>We care about academics, but we also care about the whole child. Students should have a place where they can slow down, ask questions, practice skills, build confidence and be proud of their progress.</p>
+          <ul class="checks">
+            <li><span class="check-dot">✓</span> Meet students where they are</li>
+            <li><span class="check-dot">✓</span> Celebrate progress</li>
+            <li><span class="check-dot">✓</span> Encourage independence</li>
+            <li><span class="check-dot">✓</span> Partner with families</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Our Team</div>
+          <h2>Meet the tutors.</h2>
+          <p>Real people. Different strengths. One goal: helping students grow.</p>
+        </div>
+        <div class="team-box">
+          <div class="team-icon" aria-hidden="true">👋</div>
+          <div>
+            <h3>Tutor introductions are coming soon.</h3>
+            <p>We’re putting together short tutor profiles so families can learn more about the people supporting students, including experience, strengths and the age groups or subjects they work with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="tuition">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Tuition &amp; Family Access</div>
+          <h2>Support that works for families.</h2>
+          <p>Contact us for current rates, schedules, enrollment availability and help understanding your options.</p>
+        </div>
+        <div class="tuition-grid">
+          <article class="price-card">
+            <div class="tag">Standard</div>
+            <h3>Program Tuition</h3>
+            <p>Pricing can vary based on schedule and services selected.</p>
+            <ul>
+              <li>After-school academic support</li>
+              <li>Small-group learning</li>
+              <li>Enrichment activities</li>
+              <li>Family communication</li>
+            </ul>
+            <a class="button secondary" href="mailto:Ami.hull@aliquestedu.com?subject=Aliquest%20Program%20Tuition">Ask for Current Rates</a>
+          </article>
+
+          <article class="price-card featured">
+            <div class="tag">CCAP</div>
+            <h3>Child Care Assistance</h3>
+            <p>Aliquest accepts CCAP for eligible families. Ask us about using your benefits with the program.</p>
+            <ul>
+              <li>CCAP accepted</li>
+              <li>Enrollment guidance</li>
+              <li>Program availability check</li>
+              <li>Family-focused support</li>
+            </ul>
+            <a class="button primary" href="mailto:Ami.hull@aliquestedu.com?subject=Question%20About%20CCAP">Ask About CCAP</a>
+          </article>
+
+          <article class="price-card">
+            <div class="tag">Need-Based</div>
+            <h3>Sliding Scale</h3>
+            <p>Sliding-scale options may be available for qualifying families based on individual circumstances.</p>
+            <ul>
+              <li>Private conversation</li>
+              <li>Review available options</li>
+              <li>Explore affordability</li>
+              <li>No-pressure conversation</li>
+            </ul>
+            <a class="button secondary" href="mailto:Ami.hull@aliquestedu.com?subject=Aliquest%20Sliding-Scale%20Options">Ask About Options</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap schools">
+        <div>
+          <div class="kicker">For School Leadership</div>
+          <h2>A program that can fit your building.</h2>
+          <p>Aliquest can tailor programming around a school's needs — from academic support and tutoring to enrichment and targeted student support.</p>
+          <div class="school-list">
+            <span>✓ Build enrollment</span>
+            <span>✓ Flexible programming</span>
+            <span>✓ Family outreach</span>
+            <span>✓ Targeted academic support</span>
+          </div>
+        </div>
+        <aside class="school-callout">
+          <div class="icon">🏫</div>
+          <h3>Let's build what your students need.</h3>
+          <a class="button" href="mailto:Ami.hull@aliquestedu.com?subject=Aliquest%20School%20Partnership">Talk With Aliquest →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section soft" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-card">
+          <div class="kicker">Get Started</div>
+          <h2>Let's talk about your child.</h2>
+          <p>Interested in enrollment, tutoring, CCAP, sliding-scale pricing or meeting our team? Reach out and we'll help you take the next step.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:Ami.hull@aliquestedu.com?subject=Aliquest%20at%20AXL%20Academy%20Inquiry"><small>Email</small>Ami.hull@aliquestedu.com</a>
+            <a class="contact-link" href="tel:+17203537276"><small>Call or text</small>720-353-7276</a>
+          </div>
+        </div>
+        <aside class="contact-side">
+          <h3>Questions about:</h3>
+          <ul>
+            <li>Enrollment</li>
+            <li>Program availability</li>
+            <li>CCAP</li>
+            <li>Sliding-scale pricing</li>
+            <li>Tutors &amp; schedules</li>
+          </ul>
+          <p style="margin:24px 0 0;color:var(--muted)"><strong style="color:var(--ink)">We're happy to help.</strong><br>Aliquest Education at AXL Academy</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>ALIQUEST EDUCATION at AXL ACADEMY</strong><br>After-school tutoring · Enrichment · Family support</div>
+      <div>© 2026 Aliquest Education</div>
+    </div>
+  </footer>
+</body>
+</html>
